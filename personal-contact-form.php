@@ -59,7 +59,7 @@ if(!class_exists('personalContactForm')) {
                 <div class="form-group">
                     <label for="name">Nombres</label>
                     <input type="text" class="form-control" name="nombre" required>
-                </p>
+                </div>
                 <div class="form-group">
                     <label for="name">Email</label>
                     <input type="email" name="email" class="form-control" required>
