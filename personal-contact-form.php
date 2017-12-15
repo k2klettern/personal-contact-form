@@ -57,16 +57,22 @@ if(!class_exists('personalContactForm')) {
             <form action="#contact-form" id="contact-form" class="form" method="post">
                 <?php wp_nonce_field('contact_form_nonce', 'contact_form'); ?>
                 <div class="form-group">
-                    <label for="name">Nombres</label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Nombres</label>
+                    <div class="col-sm-10">
                     <input type="text" class="form-control" name="nombre" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="name">Email</label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-10">
                     <input type="email" name="email" class="form-control" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="asunto">Asunto</label>
+                    <label for="asunto" class="col-sm-2 col-form-label col-form-label-sm">Asunto</label>
+                    <div class="col-sm-10">
                     <input type="text" name="asunto" class="form-control" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="mensaje" class="form-control">Mensaje</label>
