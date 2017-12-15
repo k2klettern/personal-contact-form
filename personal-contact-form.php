@@ -56,31 +56,29 @@ if(!class_exists('personalContactForm')) {
             ?>
             <form action="#contact-form" id="contact-form" class="form" method="post">
                 <?php wp_nonce_field('contact_form_nonce', 'contact_form'); ?>
-                <p>
+                <div class="form-group">
                     <label for="name">Nombres</label>
-                    <input type="text" name="nombre" class="widefat" required>
+                    <input type="text" class="form-control" name="nombre" required>
                 </p>
-                <p>
+                <div class="form-group">
                     <label for="name">Email</label>
-                    <input type="email" name="email" class="widefat" required>
-                </p>
-                <p>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
                     <label for="asunto">Asunto</label>
-                    <input type="text" name="asunto" class="widefat" required>
-                </p>
-                <p>
-                    <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje"></textarea>
-                </p>
-                <p>
-                <div class="g-recaptcha" data-sitekey="<?php echo $this->formCaptchaSitekey; ?>"></div>
-                </p>
-                <p>
-                    <button type="submit">Enviar</button>
-                </p>
-                <p>
+                    <input type="text" name="asunto" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje" class="form-control">Mensaje</label>
+                    <textarea name="mensaje" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                <div class="g-recaptcha form-control" data-sitekey="<?php echo $this->formCaptchaSitekey; ?>"></div>
+                </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="form-group">
                     <?php do_action('form_response'); ?>
-                </p>
+                </div>
             </form>
             <?php
             return ob_get_clean();
