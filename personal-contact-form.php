@@ -63,21 +63,21 @@ if(!class_exists('personalContactForm')) {
             <form action="#contact-form" id="contact-form" class="form" method="post">
                 <?php wp_nonce_field('contact_form_nonce', 'contact_form'); ?>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Name', 'personalform'); ?></label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nombre" required>
+                    <input type="text" class="form-control" name="nombre" placeholder="<?php _e('Name', 'personalform'); ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Email', 'personalform'); ?></label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"></label>
                     <div class="col-sm-10">
-                    <input type="email" name="email" class="form-control" required>
+                    <input type="email" name="email" class="form-control" placeholder="<?php _e('Email', 'personalform'); ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="asunto" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Subject', 'personalform'); ?></label>
+                    <label for="asunto" class="col-sm-2 col-form-label col-form-label-sm"></label>
                     <div class="col-sm-10">
-                    <input type="text" name="asunto" class="form-control" required>
+                    <input type="text" name="asunto" class="form-control" placeholder="<?php _e('Subject', 'personalform'); ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
