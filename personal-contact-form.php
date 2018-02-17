@@ -32,6 +32,7 @@ if(!class_exists('personalContactForm')) {
             add_action( 'template_redirect', array($this, 'proccessForm'));
             add_action( 'wp_enqueue_scripts', array($this, 'pluginEnqueueScripts'));
             add_action( 'admin_init', array($this, 'formGeneralSection'));
+	        add_action('init', array($this, 'load_my_transl'));
 
             if($this->formCaptchaSitekey == "" || $this->formCaptchaSecret == "") {
                 add_action('admin_notices', function() {
@@ -42,6 +43,11 @@ if(!class_exists('personalContactForm')) {
                 });
             }
         }
+
+	    public function load_my_transl()
+	    {
+		    load_plugin_textdomain('personalform', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+	    }
 
         public function pluginEnqueueScripts() {
             wp_enqueue_script( 're-captcha', 'https://www.google.com/recaptcha/api.js');
@@ -57,31 +63,31 @@ if(!class_exists('personalContactForm')) {
             <form action="#contact-form" id="contact-form" class="form" method="post">
                 <?php wp_nonce_field('contact_form_nonce', 'contact_form'); ?>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Nombres</label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Name', 'personalform'); ?></label>
                     <div class="col-sm-10">
                     <input type="text" class="form-control" name="nombre" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                    <label for="name" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Email', 'personalform'); ?></label>
                     <div class="col-sm-10">
                     <input type="email" name="email" class="form-control" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="asunto" class="col-sm-2 col-form-label col-form-label-sm">Asunto</label>
+                    <label for="asunto" class="col-sm-2 col-form-label col-form-label-sm"><?php _e('Subject', 'personalform'); ?></label>
                     <div class="col-sm-10">
                     <input type="text" name="asunto" class="form-control" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="mensaje" class="form-control">Mensaje</label>
+                    <label for="mensaje" class="form-control"><?php _e('Message', 'personalform'); ?></label>
                     <textarea name="mensaje" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                 <div class="g-recaptcha form-control" data-sitekey="<?php echo $this->formCaptchaSitekey; ?>"></div>
                 </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary"><?php _e('Send', 'personalform'); ?></button>
                     <div class="form-group">
                     <?php do_action('form_response'); ?>
                 </div>
@@ -113,7 +119,7 @@ if(!class_exists('personalContactForm')) {
                 $result = json_decode($response);
                 if (!$result->success) {
                     add_action('form_response', function () {
-                        echo "Error de Captcha";
+                        _e('Captcha Error', 'personalform');
                     });
 
                     return false;
@@ -126,7 +132,7 @@ if(!class_exists('personalContactForm')) {
 
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     add_action('form_response', function () {
-                        echo "Error de Email";
+	                    _e('Email Error', 'personalform');
                     });
 
                     return false;
@@ -136,7 +142,7 @@ if(!class_exists('personalContactForm')) {
 
                 if (is_wp_error($mail)) {
                     add_action('form_response', function () {
-                        echo "Ocurrio un problema, intente más tarde";
+                        _e('There is a problem, try later pls.', 'personalform');
                     });
 
                     return false;
@@ -151,7 +157,7 @@ if(!class_exists('personalContactForm')) {
                     wp_insert_post($my_post);
 
                     add_action('form_response', function () {
-                        echo "Hemos recibido tu mensaje, pronto estaremos en contacto";
+                        _e('We just receive your Message, we will be in touch soonest', 'personalform');
                     });
 
                     return false;

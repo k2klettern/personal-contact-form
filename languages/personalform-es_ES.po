@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-02-17 15:55+0100\n"
+"PO-Revision-Date: 2018-02-17 16:07+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Last-Translator: \n"
+"Language: es_ES\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: personal-contact-form.php:39
+msgid "Pls. set your Captcha Keys in options general."
+msgstr "Por favor introduce tus claves de Captcha en opciones generales."
+
+#: personal-contact-form.php:60
+msgid "Name"
+msgstr "Nombre"
+
+#: personal-contact-form.php:66
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: personal-contact-form.php:72
+msgid "Subject"
+msgstr "Asunto"
+
+#: personal-contact-form.php:78
+msgid "Message"
+msgstr "Mensaje"
+
+#: personal-contact-form.php:84
+msgid "Send"
+msgstr "Enviar"
+
+#: personal-contact-form.php:116
+msgid "Captcha Error"
+msgstr "Error de Captcha"
+
+#: personal-contact-form.php:129
+msgid "Email Error"
+msgstr "Error de Correo"
+
+#: personal-contact-form.php:139
+msgid "There is a problem, try later pls."
+msgstr "Hay un problema, intenta más tarde."
+
+#: personal-contact-form.php:154
+msgid "We just receive your Message, we will be in touch soonest"
+msgstr "Heos recibido tu mensaje, pronto le contactaremos"
+
+#: personal-contact-form.php:198
+msgid "<p>Here can you enter your Captcha Details</p>"
+msgstr "<p>Introduce aquí tus detalles de Captcha</p>"
